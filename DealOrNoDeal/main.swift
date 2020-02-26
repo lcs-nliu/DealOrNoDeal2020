@@ -57,25 +57,15 @@ while true {
 // Create the array with briefcase values
 var briefcaseValues = [100, 500, 1_000, 5_000, 10_000, 25_000, 50_000, 100_000, 500_000, 1_000_000]
 
-// getBriefcaseOpened
-//
-// PURPOSE:
-//
-// Asks the user for a briefcase that is opened during a turn, as shown in the example.
-// When the input is invalid, the prompt is repeated.
-//
-// INPUT / PARAMETERS:
-//
-// What turn it is
-//
-// OUTPUT / RETURN VALUE:
-//
-// An integer between 1 and 10, inclusive
+
+// PURPOSE: Asks the user for a briefcase that is opened during a turn, as shown in the example
 func getBriefcaseOpened(onTurn turn: Int) -> Int {
     
-    // STUDENTS: Complete this function
+    // When the input is invalid, the prompt is repeated.
     while true {
         print("Which briefcase did you open?")
+
+        // INPUT / PARAMETERS: What turn it is
         guard let inputGivenStr = readLine() else {
             
             // No input given, return to top of loop and ask again
@@ -102,7 +92,7 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
         // If we've made it here, the input is valid
         briefcaseOpenedThisTime = inputGivenInt
         
-        
+        // OUTPUT / RETURN VALUE: An integer between 1 and 10, inclusive
         // The statement below can be modified
         return briefcaseOpenedThisTime
         
@@ -119,6 +109,47 @@ for turn in 1...briefcasesOpened {
     briefcaseValues[briefcaseOpenedThisTime - 1] = 0
     
 }
+
+// Ask user how much the banker offered them
+func bankersOffer() -> Int {
+    
+    // STUDENTS: Complete this function
+    while true {
+        // Ask what the offer is
+        print("What was the banker's offer?")
+        
+        guard let offerStr = readLine() else {
+            
+            // No input given, return to top of loop and ask again
+            continue
+        }
+        
+        // Attempt to make input into an integer
+        guard let offerInt = Int(offerStr) else {
+            
+            // Could not make input into an integer, so return to top and ask again
+            continue
+            
+        }
+        
+        // Check that integer is in desired range
+        // REMEMBER: Guard statement conditions describe what we WANT
+        guard offerInt > 0, offerInt < 11 else {
+            
+            // Integer not in desired range, return to top and ask again
+            continue
+            
+        }
+        
+        // The statement below can be modified
+        return offerInt
+        
+    }
+    
+}
+
+let bankerOffer = bankersOffer()
+
 
 // STUDENTS: Do any remaining calculations you might need below.
 
