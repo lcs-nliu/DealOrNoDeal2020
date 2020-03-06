@@ -10,7 +10,7 @@ import Foundation
 
 //
 // INPUT SECTION OF PROGRAM
-//
+// variables needed in the program
 var briefcasesOpened = -1
 var briefcaseOpenedThisTime = 0
 var totalBriefCaseValue = 0
@@ -64,7 +64,7 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
     
     // When the input is invalid, the prompt is repeated.
     while true {
-        print("Which briefcase did you open?")
+        print("Briefcase opened, in turn \(turn), was:")
 
         // INPUT / PARAMETERS: What turn it is
         guard let inputGivenStr = readLine() else {
@@ -153,11 +153,12 @@ func bankersOffer() -> Int {
 
 
 // STUDENTS: Do any remaining calculations you might need below.
-
+// Loop through all briefcase values and add to the total
 for briefcase in briefcaseValues {
     totalBriefCaseValue += briefcase
 }
 
+// Find the average by dividing total value by number of unopened briefcases
 var averageBriefcaseValue = totalBriefCaseValue/(briefcaseValues.count - briefcasesOpened)
 
 
@@ -165,8 +166,11 @@ var averageBriefcaseValue = totalBriefCaseValue/(briefcaseValues.count - briefca
 //
 
 // STUDENTS: Now tell the player whether to take the deal, or not.
+// If statement to calculate whether the banker's offer is greater than average briefcase value or vice versa
+// If banker's offer is greater, the player should take the deal
+// If average unopened value is greater, the player should not take the deal and keep playing
 if bankersOffer() > averageBriefcaseValue {
-    print ("Deal")
+    print ("Deal.")
 } else {
-    print ("No deal")
+    print ("No deal.")
 }
