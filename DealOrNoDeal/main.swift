@@ -165,3 +165,8 @@ var averageBriefcaseValue = totalBriefCaseValue/(briefcaseValues.count - briefca
 //
 
 // STUDENTS: Now tell the player whether to take the deal, or not.
+if bankersOffer() > averageBriefcaseValue {
+    print ("Deal")
+} else {
+    print ("No deal")
+}
