@@ -154,6 +154,11 @@ func bankersOffer() -> Int {
 
 // STUDENTS: Do any remaining calculations you might need below.
 
+for briefcase in briefcaseValues {
+    totalBriefCaseValue += briefcase
+}
+
+var averageBriefcaseValue = totalBriefCaseValue/(briefcaseValues.count - briefcasesOpened)
 
 
 // OUTPUT SECTION OF PROGRAM
