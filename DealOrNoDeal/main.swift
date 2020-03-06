@@ -65,7 +65,7 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
     // When the input is invalid, the prompt is repeated.
     while true {
         print("Briefcase opened, in turn \(turn), was:")
-
+        
         // INPUT / PARAMETERS: What turn it is
         guard let inputGivenStr = readLine() else {
             
