@@ -13,6 +13,7 @@ import Foundation
 //
 var briefcasesOpened = -1
 var briefcaseOpenedThisTime = 0
+var totalBriefCaseValue = 0
 
 // Loop until valid input provided by user
 while true {
@@ -110,6 +111,7 @@ for turn in 1...briefcasesOpened {
     
 }
 
+
 // Ask user how much the banker offered them
 func bankersOffer() -> Int {
     
@@ -134,7 +136,7 @@ func bankersOffer() -> Int {
         
         // Check that integer is in desired range
         // REMEMBER: Guard statement conditions describe what we WANT
-        guard offerInt > 0, offerInt < 11 else {
+        guard offerInt > 0 else {
             
             // Integer not in desired range, return to top and ask again
             continue
@@ -148,15 +150,12 @@ func bankersOffer() -> Int {
     
 }
 
-let bankerOffer = bankersOffer()
 
 
 // STUDENTS: Do any remaining calculations you might need below.
 
 
 
-
-//
 // OUTPUT SECTION OF PROGRAM
 //
 
